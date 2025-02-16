@@ -1,184 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Jebli Lmabli!</title>
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/itsme0kjhgf/jebli-bd/refs/heads/main/images-removebg-preview.png">
-
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: url('https://wallpapercave.com/wp/wp9788666.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-      text-align: center;
-      overflow-x: hidden;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    /* Fade-in Animation */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    /* Banner */
-    .banner {
-      font-size: 4rem;
-      font-weight: bold;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-      margin-top: 20px;
-      animation: bounce 2s infinite;
-      backdrop-filter: blur(8px);
-      padding: 20px;
-      border-radius: 10px;
-      display: inline-block;
-    }
-
-    /* Welcome Message */
-    .welcome-message {
-      font-size: 1.5rem;
-      margin: 20px;
-      backdrop-filter: blur(5px);
-      padding: 15px;
-      border-radius: 10px;
-    }
-
-    /* Virtual Confetti Section */
-    .confetti-section img {
-      width: 100%;
-      max-width: 600px;
-      border-radius: 10px;
-    }
-
-    /* Countdown Timer */
-    .countdown {
-      font-size: 2rem;
-      margin: 30px 0;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(10px);
-      display: inline-block;
-      border-radius: 10px;
-    }
-
-    #timer {
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: #ffdd57;
-    }
-
-    /* Upbeat Tunes Section */
-    .music-section {
-      font-size: 1.8rem;
-      margin-top: 20px;
-    }
-
-    audio {
-      margin-top: 10px;
-    }
-
-    /* Digital Cake */
-    .cake-section img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 10px;
-      margin: 20px 0;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Porsche Car Animation */
-    .car-animation {
-      position: relative;
-      height: 200px;
-      overflow: hidden;
-      margin: 50px 0;
-    }
-    .car-animation img {
-      position: absolute;
-      bottom: 0;
-      left: -300px;
-      width: 300px;
-      animation: drive 10s linear infinite;
-    }
-
-    /* Animations */
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
-    }
-    @keyframes drive {
-      0% { left: -300px; }
-      100% { left: 100%; }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Banner -->
-  <div class="banner">🎉 Happy Birthday Jebli Lmabli! 🎉</div>
-
-  <!-- Welcome Message -->
-  <div class="welcome-message">
-    Happy Birthday wakha makatstahlch 🙂 gha da7k  🎂🎈🎉
-  </div>
-
-  <!-- Virtual Confetti -->
-  <div class="confetti-section">
-    <img src="https://media.tenor.com/FuYhS1n_c0IAAAAM/cat-piano.gif" alt="Confetti">
-  </div>
-
-  <!-- Countdown Timer -->
-  <div class="countdown">
-    ⏳ Time until tchrf: <br>
-    <span id="timer"></span>
-  </div>
-
-  <!-- Favorite Music Maybe 🙂 -->
-  <div class="music-section">
-    🎵 Fav Music Maybe 🙂 🎵
-    <br>
-    <audio controls>
-      <source src="https://github.com/itsme0kjhgf/jebli-bd/raw/refs/heads/main/Furelise%20-%20Free%20Mami%20(feat.%20NAB%20FAKE)%20%5BOfficial%20Music%20Video%5D.mp3" type="audio/mp3">
-      Your browser does not support the audio element.
-    </audio>
-  </div>
-
-  <!-- Digital Cake -->
-  <div class="cake-section">
-    <h2>🍰 cake makatkalx 🙂 🍰</h2>
-    <img src="https://raw.githubusercontent.com/itsme0kjhgf/jebli-bd/refs/heads/main/delicious-chocolate-birthday-cake-with-candles_632498-24980-removebg-preview.png" alt="Birthday Cake">
-  </div>
-
-  <!-- Porsche Car Animation -->
-  <div class="car-animation">
-    <img src="https://images-porsche.imgix.net/-/media/0683EEF17ADA4D6ABAA276C65235E96C_29BC6C3357784A859B8A0E4B36EE15F8_CZ25W14IX0010-911-carrera-4-gts-side?w=2560&h=697&q=45&crop=faces%2Centropy%2Cedges&auto=format" alt="Porsche Car">
-  </div>
-
-  <script>
-    // Countdown Timer
-    function updateCountdown() {
-      const birthday = new Date("February 19, 2026 00:00:00").getTime();
-      const now = new Date().getTime();
-      const timeLeft = birthday - now;
-
-      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-      document.getElementById("timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-      if (timeLeft < 0) {
-        document.getElementById("timer").innerHTML = "🎉 Happy Birthday! 🎉";
-      }
-    }
 
     setInterval(updateCountdown, 1000);
-  </script>
 
-</body>
-</html>
+  </script>
+<!-- Special Memories Section -->
+
+  <div class="memories-section">
+
+    <h2>📸 Special Memories 📸</h2>
+
+    <img src="https://raw.githubusercontent.com/itsme0kjhgf/jebli-bd/refs/heads/main/IMG_20250216_212914.jpg" alt="Memory 1" class="memory-img">
+
+    <img src="https://raw.githubusercontent.com/itsme0kjhgf/jebli-bd/refs/heads/main/IMG_20250216_212945.jpg" alt="Memory 2" class="memory-img">
+
+  </div>
+
+  <style>
+
+    /* Memories Section */
+
+    .memories-section {
+
+      text-align: center;
+
+      margin: 30px 0;
+
+      backdrop-filter: blur(5px);
+
+      padding: 15px;
+
+      border-radius: 10px;
+
+    }
+
+    .memory-img {
+
+      width: 90%;
+
+      max-width: 500px;
+
+      border-radius: 10px;
+
+      margin: 10px;
