@@ -101,6 +101,7 @@
       left: -300px;
       width: 300px;
       animation: drive 10s linear infinite;
+      cursor: pointer;
     }
 
     /* Animations */
@@ -111,6 +112,28 @@
     @keyframes drive {
       0% { left: -300px; }
       100% { left: 100%; }
+    }
+
+    /* Memories Section */
+    .memories-section {
+      text-align: center;
+      margin: 30px 0;
+      backdrop-filter: blur(5px);
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .memory-img {
+      width: 90%;
+      max-width: 500px;
+      border-radius: 10px;
+      margin: 10px;
+    }
+
+    /* Porsche Message */
+    .porsche-message {
+      font-size: 1.5rem;
+      margin-top: 10px;
+      color: #ffdd57;
     }
   </style>
 </head>
@@ -153,7 +176,15 @@
 
   <!-- Porsche Car Animation -->
   <div class="car-animation">
-    <img src="https://images-porsche.imgix.net/-/media/0683EEF17ADA4D6ABAA276C65235E96C_29BC6C3357784A859B8A0E4B36EE15F8_CZ25W14IX0010-911-carrera-4-gts-side?w=2560&h=697&q=45&crop=faces%2Centropy%2Cedges&auto=format" alt="Porsche Car">
+    <img id="porsche" src="https://images-porsche.imgix.net/-/media/0683EEF17ADA4D6ABAA276C65235E96C_29BC6C3357784A859B8A0E4B36EE15F8_CZ25W14IX0010-911-carrera-4-gts-side?w=2560&h=697&q=45&crop=faces%2Centropy%2Cedges&auto=format" alt="Porsche Car">
+  </div>
+  <div class="porsche-message" id="porsche-message"></div>
+
+  <!-- Special Memories Section -->
+  <div class="memories-section">
+    <h2>📸 Special Memories 📸</h2>
+    <img src="https://raw.githubusercontent.com/itsme0kjhgf/jebli-bd/refs/heads/main/IMG_20250216_212914.jpg" alt="Memory 1" class="memory-img">
+    <img src="https://raw.githubusercontent.com/itsme0kjhgf/jebli-bd/refs/heads/main/IMG_20250216_212945.jpg" alt="Memory 2" class="memory-img">
   </div>
 
   <script>
@@ -176,48 +207,16 @@
     }
 
     setInterval(updateCountdown, 1000);
+
+    // Porsche Click Event
+    const porsche = document.getElementById('porsche');
+    const porscheMessage = document.getElementById('porsche-message');
+    const porscheSound = new Audio('https://github.com/itsme0kjhgf/jebli-bd/raw/refs/heads/main/porsche-sound.mp3'); // Replace with your Porsche sound file URL
+
+    porsche.addEventListener('click', () => {
+      porscheSound.play();
+      porscheMessage.textContent = 'Touch le Porsche!';
+    });
   </script>
- 
-
-  </script>
-<!-- Special Memories Section -->
-
-  <div class="memories-section">
-
-    <h2>📸 Special Memories 📸</h2>
-
-    <img src="https://raw.githubusercontent.com/itsme0kjhgf/jebli-bd/refs/heads/main/IMG_20250216_212914.jpg" alt="Memory 1" class="memory-img">
-
-    <img src="https://raw.githubusercontent.com/itsme0kjhgf/jebli-bd/refs/heads/main/IMG_20250216_212945.jpg" alt="Memory 2" class="memory-img">
-
-  </div>
-
-  <style>
-
-    /* Memories Section */
-
-    .memories-section {
-
-      text-align: center;
-
-      margin: 30px 0;
-
-      backdrop-filter: blur(5px);
-
-      padding: 15px;
-
-      border-radius: 10px;
-
-    }
-
-    .memory-img {
-
-      width: 90%;
-
-      max-width: 500px;
-
-      border-radius: 10px;
-
-      margin: 10px;
 </body>
 </html>
